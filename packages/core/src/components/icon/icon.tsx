@@ -17,7 +17,7 @@
 import classNames from "classnames";
 import * as React from "react";
 
-import { IconName, IconSvgPaths16, IconSvgPaths20 } from "@blueprintjs/icons";
+import { IconName, IconSvgPaths16, IconSvgPaths20 } from "qy-blueprintjs-icons";
 import { Classes, DISPLAYNAME_PREFIX, IIntentProps, IProps, MaybeElement } from "../../common";
 
 export { IconName };

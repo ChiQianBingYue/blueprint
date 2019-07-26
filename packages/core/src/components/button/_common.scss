@@ -87,10 +87,10 @@ $dark-minimal-button-background-color-active: rgba($gray3, 0.3) !default;
 
 // "intent": (default, hover, active colors)
 $button-intents: (
-  "primary": ($pt-intent-primary, $blue2, $blue1),
+  "primary": ($pt-intent-primary, $red2, $red1),
   "success": ($pt-intent-success, $green2, $green1),
-  "warning": ($pt-intent-warning, $orange2, $orange1),
-  "danger": ($pt-intent-danger, $red2, $red1)
+  "warning": ($pt-intent-warning, $dark-gray2, $dark-gray1),
+  "danger": ($pt-intent-danger, $orange2, $orange1)
 ) !default;
 
 @mixin pt-button-base() {
@@ -151,13 +151,13 @@ $button-intents: (
 }
 
 @mixin pt-button-hover() {
-  box-shadow: $button-box-shadow;
+  // box-shadow: $button-box-shadow;
   background-clip: padding-box;
   background-color: $button-background-color-hover;
 }
 
 @mixin pt-button-active() {
-  box-shadow: $button-box-shadow-active;
+  // box-shadow: $button-box-shadow-active;
   background-color: $button-background-color-active;
   background-image: none;
 }
@@ -177,7 +177,7 @@ $button-intents: (
 }
 
 @mixin pt-button-intent($default-color, $hover-color, $active-color) {
-  box-shadow: $button-intent-box-shadow;
+  // box-shadow: $button-intent-box-shadow;
   background-color: $default-color;
   background-image: $button-intent-gradient;
   color: $white;
@@ -189,13 +189,13 @@ $button-intents: (
   }
 
   &:hover {
-    box-shadow: $button-intent-box-shadow;
+    // box-shadow: $button-intent-box-shadow;
     background-color: $hover-color;
   }
 
   &:active,
   &.#{$ns}-active {
-    box-shadow: $button-intent-box-shadow-active;
+    // box-shadow: $button-intent-box-shadow-active;
     background-color: $active-color;
     background-image: none;
   }

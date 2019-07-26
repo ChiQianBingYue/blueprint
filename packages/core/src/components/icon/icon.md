@@ -6,7 +6,7 @@
 
 <div class="@ns-callout @ns-intent-primary @ns-icon-info-sign">
     <h4 class="@ns-heading">SVG icons in 2.0</h4>
-    Blueprint 2.0 introduced SVG icon support and moved icon resources to a separate __@blueprintjs/icons__ package.
+    Blueprint 2.0 introduced SVG icon support and moved icon resources to a separate __qy-blueprintjs-icons__ package.
     The `Icon` component renders SVG paths and the icon classes are no longer used by any Blueprint React component.
     Icon font support has been preserved but should be considered a legacy feature that will be removed in a
     future major version.
@@ -30,7 +30,7 @@ image; the icon element itself can be sized separately using CSS.
 The HTML element rendered by `<Icon>` can be customized with the `tagName` prop
 (defaults to `span`), and additional props are passed to this element.
 
-Data files in the __@blueprintjs/icons__ package provide SVG path information
+Data files in the __qy-blueprintjs-icons__ package provide SVG path information
 for Blueprint's 300+ icons for 16px and 20px grids. The `icon` prop dictates
 which SVG is rendered and `iconSize` determines which pixel grid is used:
 `iconSize >= 20` will use the 20px grid and smaller icons will use the 16px
@@ -38,7 +38,7 @@ grid.
 
 ```tsx
 import { Icon, Intent } from "@blueprintjs/core";
-import { IconNames } from "@blueprintjs/icons";
+import { IconNames } from "qy-blueprintjs-icons";
 
 // string literals are supported through IconName union type
 <Icon icon="cross" />
@@ -71,7 +71,7 @@ import { IconNames } from "@blueprintjs/icons";
     support is equivalent.
 </div>
 
-The CSS-only icons API uses the __icon fonts__ from the __@blueprintjs/icons__ package.
+The CSS-only icons API uses the __icon fonts__ from the __qy-blueprintjs-icons__ package.
 
 To use Blueprint UI icons via CSS, you must apply two classes to a `<span>` element:
 - a __sizing class__, either `@ns-icon-standard` (16px) or `@ns-icon-large` (20px)

@@ -19,12 +19,12 @@ import {
     Hotkey,
     Hotkeys,
     HotkeysTarget,
-    Menu,
-    MenuItem,
+    // Menu,
+    // MenuItem,
     NavbarHeading,
-    Popover,
-    Position,
-    Tag,
+    // Popover,
+    // Position,
+    // Tag,
 } from "@blueprintjs/core";
 import { NavButton } from "@blueprintjs/docs-theme";
 import { INpmPackage } from "@documentalist/client";
@@ -35,7 +35,7 @@ export interface INavHeaderProps {
     onToggleDark: (useDark: boolean) => void;
     useDarkTheme: boolean;
     useNextVersion: boolean;
-    packageData: INpmPackage;
+    packageData?: INpmPackage;
 }
 
 @HotkeysTarget
@@ -50,7 +50,8 @@ export class NavHeader extends React.PureComponent<INavHeaderProps, {}> {
                     </a>
                     <div>
                         <NavbarHeading className="docs-heading">
-                            <span>Blueprint</span> {this.renderVersionsMenu()}
+                            <span>Blueprint</span>
+                            {/* {this.renderVersionsMenu()} */}
                         </NavbarHeading>
                         <a className={Classes.TEXT_MUTED} href="https://github.com/palantir/blueprint" target="_blank">
                             <small>View on GitHub</small>
@@ -81,28 +82,28 @@ export class NavHeader extends React.PureComponent<INavHeaderProps, {}> {
         );
     }
 
-    private renderVersionsMenu() {
-        const { version, nextVersion, versions } = this.props.packageData;
-        if (versions.length === 1) {
-            return <div className={Classes.TEXT_MUTED}>v{versions[0]}</div>;
-        }
+    // private renderVersionsMenu() {
+    //     const { version, nextVersion, versions } = this.props.packageData;
+    //     if (versions.length === 1) {
+    //         return <div className={Classes.TEXT_MUTED}>v{versions[0]}</div>;
+    //     }
 
-        // default to latest release if we can't find a major version in the URL
-        const [current] = /\/versions\/([0-9]+)/.exec(location.href) || [
-            this.props.useNextVersion ? nextVersion : version,
-        ];
-        const releaseItems = versions
-            .filter(v => +major(v) > 0)
-            .map(v => <MenuItem href={v === current ? "/docs" : `/docs/versions/${major(v)}`} key={v} text={v} />);
-        return (
-            <Popover position={Position.BOTTOM}>
-                <Tag interactive={true} minimal={true} round={true} rightIcon="caret-down">
-                    v{major(current)}
-                </Tag>
-                <Menu className="docs-version-list">{releaseItems}</Menu>
-            </Popover>
-        );
-    }
+    //     // default to latest release if we can't find a major version in the URL
+    //     const [current] = /\/versions\/([0-9]+)/.exec(location.href) || [
+    //         this.props.useNextVersion ? nextVersion : version,
+    //     ];
+    //     const releaseItems = versions
+    //         .filter(v => +major(v) > 0)
+    //         .map(v => <MenuItem href={v === current ? "/docs" : `/docs/versions/${major(v)}`} key={v} text={v} />);
+    //     return (
+    //         <Popover position={Position.BOTTOM}>
+    //             <Tag interactive={true} minimal={true} round={true} rightIcon="caret-down">
+    //                 v{major(current)}
+    //             </Tag>
+    //             <Menu className="docs-version-list">{releaseItems}</Menu>
+    //         </Popover>
+    //     );
+    // }
 
     private handleDarkSwitchChange = () => {
         this.props.onToggleDark(!this.props.useDarkTheme);
@@ -110,6 +111,6 @@ export class NavHeader extends React.PureComponent<INavHeaderProps, {}> {
 }
 
 /** Get major component of semver string. */
-function major(version: string) {
-    return version.split(".", 1)[0];
-}
+// function major(version: string) {
+//     return version.split(".", 1)[0];
+// }

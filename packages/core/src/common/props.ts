@@ -16,7 +16,7 @@
 
 import * as React from "react";
 
-import { IconName } from "@blueprintjs/icons";
+import { IconName } from "qy-blueprintjs-icons";
 import { Intent } from "./intent";
 
 export const DISPLAYNAME_PREFIX = "Blueprint3";

@@ -17,5 +17,7 @@
     "editor.tabSize": 4,
     "[scss]": {
         "editor.tabSize": 2
-    }
+    },
+    "eslint.enable": false,
+    "commentTranslate.targetLanguage": "zh-CN"
 }

@@ -1,7 +1,7 @@
 // Copyright 2015 Palantir Technologies, Inc. All rights reserved.
 // Licensed under the Apache License, Version 2.0.
 
-@import "~@blueprintjs/icons/src/icons";
+@import "~qy-blueprintjs-icons/src/icons";
 @import "../../common/variables";
 @import "../button/common";
 
@@ -100,10 +100,10 @@ $control-group-stack: (
   transition: $input-transition;
   appearance: none;
 
-  &:focus,
-  &.#{$ns}-active {
-    box-shadow: input-transition-shadow($input-shadow-color-focus, true), $input-box-shadow-focus;
-  }
+  // &:focus,
+  // &.#{$ns}-active {
+  //   box-shadow: input-transition-shadow($input-shadow-color-focus), $input-box-shadow-focus;
+  // }
 
   &[type="search"],
   &.#{$ns}-round {

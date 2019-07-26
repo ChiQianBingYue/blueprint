@@ -28,7 +28,7 @@ const LIGHT_THEME = "";
 const THEME_LOCAL_STORAGE_KEY = "blueprint-docs-theme";
 
 const GITHUB_SOURCE_URL = "https://github.com/palantir/blueprint/blob/develop";
-const NPM_URL = "https://www.npmjs.com/package";
+// const NPM_URL = "https://www.npmjs.com/package";
 
 // detect Components page and subheadings
 const COMPONENTS_PATTERN = /\/components(\.[\w-]+)?$/;
@@ -72,7 +72,7 @@ export class BlueprintDocs extends React.Component<IBlueprintDocsProps, { themeN
                 onToggleDark={this.handleToggleDark}
                 useDarkTheme={this.state.themeName === DARK_THEME}
                 useNextVersion={this.props.useNextVersion}
-                packageData={this.getNpmPackage("@blueprintjs/core")}
+                // packageData={this.getNpmPackage("@blueprintjs/core")}
             />
         );
         return (
@@ -104,7 +104,7 @@ export class BlueprintDocs extends React.Component<IBlueprintDocsProps, { themeN
                             <NavIcon route={route} />
                             <span>{title}</span>
                         </a>
-                        {this.maybeRenderPackageLink(`@blueprintjs/${route}`)}
+                        {/* {this.maybeRenderPackageLink(`@blueprintjs/${route}`)} */}
                     </div>
                 );
             } else {
@@ -143,22 +143,22 @@ export class BlueprintDocs extends React.Component<IBlueprintDocsProps, { themeN
         return `@blueprintjs/${entry.fileName.split("/", 2)[1]}`;
     }
 
-    private maybeRenderPackageLink(packageName: string) {
-        const pkg = this.getNpmPackage(packageName);
-        if (pkg == null) {
-            return null;
-        }
-        const version = this.props.useNextVersion && pkg.nextVersion ? pkg.nextVersion : pkg.version;
-        return (
-            <a className={Classes.TEXT_MUTED} href={`${NPM_URL}/${pkg.name}`} target="_blank">
-                <small>{version}</small>
-            </a>
-        );
-    }
+    // private maybeRenderPackageLink(packageName: string) {
+    //     const pkg = this.getNpmPackage(packageName);
+    //     if (pkg == null) {
+    //         return null;
+    //     }
+    //     const version = this.props.useNextVersion && pkg.nextVersion ? pkg.nextVersion : pkg.version;
+    //     return (
+    //         <a className={Classes.TEXT_MUTED} href={`${NPM_URL}/${pkg.name}`} target="_blank">
+    //             <small>{version}</small>
+    //         </a>
+    //     );
+    // }
 
-    private getNpmPackage(packageName: string) {
-        return this.props.docs.npm[packageName];
-    }
+    // private getNpmPackage(packageName: string) {
+    //     return this.props.docs.npm[packageName];
+    // }
 
     // This function is called whenever the documentation page changes and should be used to
     // run non-React code on the newly rendered sections.
